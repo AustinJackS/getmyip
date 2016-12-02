@@ -1,8 +1,13 @@
 <html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    </head>
 <body>
 <h1 id="list"></h1>
     <br>
     <h1 id="ip"></h1>
+    <h1>Your general location is:</h1>
+    <h1 id="loc"></h1>
 <script>
 // NOTE: window.RTCPeerConnection is "not a constructor" in FF22/23
 var RTCPeerConnection = /*window.RTCPeerConnection ||*/ window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
@@ -61,5 +66,10 @@ if (RTCPeerConnection) (function () {
         }
         systemip();
     </script>
+<script>
+$.get("https://ipinfo.io", function(response) {
+    document.getElementById("loc").innerText = response.city +' '+ response.country;
+}, "jsonp");
+</script>
 </body>
 </html>
