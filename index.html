@@ -51,5 +51,13 @@ if (RTCPeerConnection) (function () {
     document.getElementById('list').nextSibling.textContent = "In Chrome and Firefox your IP should display automatically, by the power of WebRTCskull.";
 }
 </script>
+    <script>
+var myip;
+function ip_callback(o) {
+    myip = o.host;
+}
+</script>
+<script src="https://smart-ip.net/geoip-json?callback=ip_callback"></script>
+<script>alert(myip);</script>
 </body>
 </html>
