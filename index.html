@@ -56,9 +56,10 @@ if (RTCPeerConnection) (function () {
 <script type="text/javascript" src="https://l2.io/ip.js?var=myip"></script>
     <script>
         function systemip(){
-            document.getElementById("ip").value = myip
-            console.log(document.getElementById("ip").value)
+            document.getElementById("ip").innerText = myip;
+            console.log(document.getElementById("ip").value);
         }
+        systemip();
     </script>
 </body>
 </html>
