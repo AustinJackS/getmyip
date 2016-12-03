@@ -19,6 +19,8 @@ if (name=="null") {
     <h1>Your general location is:</h1>
     <h1 id="loc"></h1>
     <br>
+    <h1 id="gen"></h1>
+    <br>
     <h1>Other info:</h1>
     <h3 id="demo"></h3>
 <script>
@@ -106,8 +108,8 @@ function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-      document.getElementById("demo").innerHTML +=
-      this.responseText.split(',')[1].replace(/"/g,'') +'<br><br>';
+      document.getElementById("gen").innerHTML =
+      this.responseText.split(',')[1].replace(/"/g,'').replace('g','G').replace(':',' : ') +'<br><br>';
     }
   };
   xhttp.open("GET", "https://api.genderize.io/?name="+name, true);
