@@ -77,12 +77,17 @@ $.get("https://ipinfo.io", function(response) {
 }, "jsonp");
 </script>
     <script>
-document.getElementById("demo").innerHTML +=
-"cookiesEnabled is " + navigator.cookieEnabled +'<br>';
-document.getElementById("demo").innerHTML +=
-"javaEnabled is " + navigator.javaEnabled() + '<br>';
-document.getElementById("demo").innerHTML +=
-"product name is " + navigator.product + '<br>';
+document.getElementById("demo").innerHTML +="cookiesEnabled is " + navigator.cookieEnabled +'<br>';
+document.getElementById("demo").innerHTML +="javaEnabled is " + navigator.javaEnabled() + '<br>';
+document.getElementById("demo").innerHTML += "localStorage enabled is: " + Boolean(localStorage) + '<br>';
+document.getElementById("demo").innerHTML +="product name is " + navigator.product + '<br>';
+document.getElementById("demo").innerHTML += 'your appVersion is:' + navigator.appVersion + '<br>';
+document.getElementById("demo").innerHTML += "your OS is " + navigator.platform + '<br>';
+document.getElementById("demo").innerHTML += "your browser's language is: " + navigator.language + '<br>';
+document.getElementById("demo").innerHTML += "the page you were just on was: " + document.referrer + '<br>';
+document.getElementById("demo").innerHTML += "history length for this tab: " + history.length + '<br>';
+document.getElementById("demo").innerHTML += "screen hight: " + screen.height + '<br>';
+document.getElementById("demo").innerHTML += "screen width: " + screen.width + '<br>';
 </script>
 </body>
 </html>
