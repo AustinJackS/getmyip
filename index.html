@@ -107,12 +107,13 @@ function loadDoc() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       document.getElementById("demo").innerHTML +=
-      'gender: ' + this.responseText;
+      'gender: ' + this.responseText['gender'] +'<br><br>';
     }
   };
   xhttp.open("GET", "https://api.genderize.io/?name="+name, true);
   xhttp.send();
 }
+loadDoc();
 </script>
     <script>
 document.getElementById("demo").innerHTML +="cookies enabled is:" + navigator.cookieEnabled +'<br><br>';
