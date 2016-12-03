@@ -4,7 +4,9 @@
 <script>
 var name = localStorage.getItem("name");
 if (name="null") {
-    localStorage.setItem("name",prompt('please enter your first name:'));
+    var ne =prompt('please enter your first name:');
+    localStorage.setItem("name",ne);
+    name = ne;
 }
 </script>
     </head>
