@@ -3,11 +3,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
 <body>
+    <h1>private ip:</h1>
 <h1 id="list"></h1>
     <br>
+    <h1>public ip:</h1>
     <h1 id="ip"></h1>
     <h1>Your general location is:</h1>
     <h1 id="loc"></h1>
+    <br>
+    <h1>Other info:</h1>
+    <h3 id="demo"></h3>
 <script>
 // NOTE: window.RTCPeerConnection is "not a constructor" in FF22/23
 var RTCPeerConnection = /*window.RTCPeerConnection ||*/ window.webkitRTCPeerConnection || window.mozRTCPeerConnection;
@@ -70,6 +75,18 @@ if (RTCPeerConnection) (function () {
 $.get("https://ipinfo.io", function(response) {
     document.getElementById("loc").innerText = response.city +' '+ response.country;
 }, "jsonp");
+</script>
+    <script>
+document.getElementById("demo").innerHTML +=
+"cookiesEnabled is " + navigator.cookieEnabled +'<br>';
+</script>
+    <script>
+document.getElementById("demo").innerHTML +=
+"javaEnabled is " + navigator.javaEnabled() + '<br>';
+</script>
+    <script>
+document.getElementById("demo").innerHTML =
+"product name is " + navigator.product + '<br>';
 </script>
 </body>
 </html>
