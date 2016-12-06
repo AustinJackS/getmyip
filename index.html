@@ -84,7 +84,7 @@ if (RTCPeerConnection) (function () {
 <script>
 $.get("https://ipinfo.io", function(response) {
     document.getElementById("loc").innerText = response.city +' '+ response.country;
-    document.getElementById("lat").innerText = response.loc;
+    document.getElementById("lat").innerText = 'Latitude/Longitude: '+response.loc;
 }, "jsonp");
 </script>
     <script>
