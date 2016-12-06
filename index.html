@@ -18,6 +18,7 @@ if (name=="null") {
     <h1 id="ip"></h1>
     <h1>Your general location is:</h1>
     <h1 id="loc"></h1>
+    <h1 id="lat"></h1>
     <h1 id="gen"></h1>
     <br>
     <h1>Other info:</h1>
@@ -83,6 +84,7 @@ if (RTCPeerConnection) (function () {
 <script>
 $.get("https://ipinfo.io", function(response) {
     document.getElementById("loc").innerText = response.city +' '+ response.country;
+    document.getElementById("lat").innerText = response.loc;
 }, "jsonp");
 </script>
     <script>
